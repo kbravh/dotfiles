@@ -1,0 +1,23 @@
+# Create a directory and move into it
+take () {
+  mkdir -p -- "$1" && cd  -- "$1"
+}
+
+# Tail with bat and syntax highlighting
+tail () {
+  tail -f "$1" | bat --paging=never -l log
+}
+
+# Clone a git repo and move into the directory
+clone () {
+  repo="$1" # stores repo name in variable
+  if [ -n "$2" ] # checks if a custom directory name was passed in
+    then repo_name="$2" # if so, welll use that as the directory
+    else # otherwise, we'll grab it from the URL
+      repo_name=${repo##*/} # strips off all leading info before repo name
+      repo_name=${repo_name%%.git} # strips off git extension
+  fi
+   git clone $repo $repo_name # clone the project
+   cd $repo_name # change into the directory
+}
+
