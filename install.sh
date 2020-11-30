@@ -1,3 +1,11 @@
+# Install Debian packages
+echo "Installing Debian packages"
+apt install -y tmux libevent ncurses bat
+
+# Fix misnaming of bat
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+
 # Install Node via nvm
 export NVM_DIR="$HOME/.nvm" && (
   git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
@@ -18,4 +26,4 @@ curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -qy
 source $HOME/.cargo/env # Load for Rust
 
 # Install Rust packages
-cargo install bottom exa
+cargo install bottom exa ripgrep
