@@ -15,6 +15,10 @@ export NVM_DIR="$HOME/.nvm" && (
 source ~/.zshrc # Reload for nvm
 nvm install node
 
+# Install youtube-dl
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+chmod a+rx /usr/local/bin/youtube-dl
+
 # Install Yarn
 apt update && apt install --no-install-recommends yarn
 
