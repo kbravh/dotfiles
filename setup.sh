@@ -2,7 +2,7 @@
 
 dir="~/dotfiles"                                      # dotfiles directory
 olddir="~/dotfiles_old"                               # old dotfiles backup directory
-files="bashrc zshrc aliases functions env inputrc"    # list of files/folders to symlink in homedir
+files="bashrc zshrc aliases functions env inputrc hyper.js"    # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -25,7 +25,7 @@ done
 apt update
 apt upgrade
 # Install zsh
-apt install git zsh
+apt install zsh
 
 # Set zsh as the default shell
 chsh -s $(which zsh)

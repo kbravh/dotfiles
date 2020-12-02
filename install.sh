@@ -1,33 +1,44 @@
 # Install Debian packages
 echo "Installing Debian packages"
-apt install -y tmux libevent ncurses bat
+# Update Ubuntu and get standard repository programs
+sudo apt update && sudo apt full-upgrade -y
+
+function install {
+  which $1 &> /dev/null
+
+  if [ $? -ne 0 ]; then
+    echo "Installing: ${1}..."
+    sudo apt install -y $1
+  else
+    echo "Already installed: ${1}"
+  fi
+}
+
+install tmux
+install libevent
+install ncurses
+install bat
+install git
+install chromium-browser
+install curl
+install file
+install gimp
+install figlet
+install lolcat
 
 # Fix misnaming of bat
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 
-# Install Node via nvm
-export NVM_DIR="$HOME/.nvm" && (
-  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-) && \. "$NVM_DIR/nvm.sh"
-source ~/.zshrc # Reload for nvm
-nvm install node
-
 # Install youtube-dl
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 chmod a+rx /usr/local/bin/youtube-dl
 
-# Install Yarn
-apt update && apt install --no-install-recommends yarn
+# Run all scripts in programs/
+for f in programs/*.sh; do bash "$f" -H; done
 
-# Install Node packages via Yarn
-yarn global add spaceship-prompt tweet-to-markdown rome gatsby-cli
+# Get all upgrades
+apt upgrade -y
+apt autoremove -y
 
-# Install Rust via rustup
-curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -qy
-source $HOME/.cargo/env # Load for Rust
-
-# Install Rust packages
-cargo install bottom exa ripgrep
+figlet "Systems are go." | lolcat
