@@ -16,4 +16,4 @@ nvm install-latest-npm
 apt update && apt install --no-install-recommends yarn
 
 # Install Node packages via Yarn
-yarn global add spaceship-prompt tweet-to-markdown rome gatsby-cli
+yarn global add spaceship-prompt tweet-to-markdown rome gatsby-cli trash-cli
