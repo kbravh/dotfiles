@@ -27,7 +27,6 @@ install gimp
 install figlet
 install lolcat
 install neovim
-install librsvg2-bin
 install rar
 install unrar
 
