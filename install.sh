@@ -25,6 +25,7 @@ install file
 install gimp
 install figlet
 install lolcat
+install neovim
 
 # Fix misnaming of bat
 mkdir -p ~/.local/bin
