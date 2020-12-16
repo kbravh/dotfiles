@@ -27,6 +27,8 @@ install figlet
 install lolcat
 install neovim
 install feh
+install rar
+install unrar
 
 # Fix misnaming of bat
 mkdir -p ~/.local/bin
