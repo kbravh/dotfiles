@@ -14,6 +14,7 @@ function install {
   fi
 }
 
+install kitty
 install tmux
 install libevent
 install ncurses
