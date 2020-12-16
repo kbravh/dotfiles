@@ -16,4 +16,13 @@ fpath=($fpath "/home/karey/.zfunctions")
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
-fpath=($fpath "/home/karey/.zfunctions")
+
+SPACESHIP_PROMPT_ORDER=(
+  user
+  dir
+  git
+  line_sep
+  exit_code
+  char
+)
+
