@@ -1,0 +1,52 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m-%d-%Y"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+# Shrug emoji
+  - trigger: ":shrug"
+    replace: "¯\_(ツ)_/¯"
+
+# GitHub star gif
+  - trigger: ":star"
+    image_path: "$CONFIG/images/star.gif"
+
+# Markdown image
+  - trigger: ":mdimg"
+    replace: "![$|$]({{clipboard}})"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+# Markdown link
+  - trigger: ":mdlink"
+    replace: "[$|$]({{clipboard}})"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+# Email address
+  - trigger: ":email"
+    replace: "karey.higuera@gmail.com"

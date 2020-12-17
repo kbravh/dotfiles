@@ -1,4 +1,7 @@
 #!/bin/bash
 
+source ../util.sh
+
 echo "🐍 Installing Python"
-apt install -y python3-venv python3-pip
+install python3-venv
+install python3-pip
