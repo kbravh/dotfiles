@@ -40,6 +40,11 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 chmod a+rx /usr/local/bin/youtube-dl
 
+# Install espanso
+wget https://github.com/federico-terzi/espanso/releases/latest/download/espanso-debian-amd64.deb
+apt install ./espanso-debian-amd64.deb && rm ./espanso-debian-amd64.deb
+# espanso start # requires user intervention
+
 # Run all scripts in programs/
 for f in programs/*.sh; do bash "$f" -H; done
 
