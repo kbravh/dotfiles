@@ -30,6 +30,7 @@ install neovim
 install rar
 install unrar
 install cava
+install cmus
 
 # Fix misnaming of bat
 mkdir -p ~/.local/bin
