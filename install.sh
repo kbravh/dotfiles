@@ -29,6 +29,7 @@ install lolcat
 install neovim
 install rar
 install unrar
+install cava
 
 # Fix misnaming of bat
 mkdir -p ~/.local/bin
