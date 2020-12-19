@@ -10,6 +10,9 @@ source "$HOME/.inputrc"
 # Load zsh plugins
 source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
 
+# Load zoxide
+eval "$(zoxide init zsh)"
+
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
