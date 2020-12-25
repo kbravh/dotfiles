@@ -33,3 +33,4 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 SPACESHIP_CHAR_SYMBOL="λ "
+fpath=($fpath "/home/karey/.zfunctions")

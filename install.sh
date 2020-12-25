@@ -22,7 +22,8 @@ install unrar
 install cava
 install cmus
 install fzf
-instlal fd-find
+install fd-find
+install id3
 
 # Run all scripts in programs/
 for f in programs/*.sh; do bash "$f" -H; done
