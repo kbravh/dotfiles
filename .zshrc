@@ -34,3 +34,7 @@ SPACESHIP_PROMPT_ORDER=(
 
 SPACESHIP_CHAR_SYMBOL="λ "
 fpath=($fpath "/home/karey/.zfunctions")
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
