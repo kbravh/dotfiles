@@ -13,3 +13,6 @@ rm $CONFIG_DIR/kitty.conf
 
 # Symlink the kitty config file
 ln -s ../config/kitty.conf $CONFIG_DIR/kitty.conf
+
+# Symlink the color theme files
+ln -s ../config/nord.conf $CONFIG_DIR/nord.conf

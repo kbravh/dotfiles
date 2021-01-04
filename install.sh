@@ -16,7 +16,6 @@ install file
 install gimp
 install figlet
 install lolcat
-install neovim
 install rar
 install unrar
 install cava
