@@ -9,10 +9,10 @@ CONFIG_DIR="$XDG_CONFIG_HOME/kitty"
 mkdir -p $CONFIG_DIR
 
 # Remove the initial kitty config if it exists
-rm $CONFIG_DIR/kitty.conf
+rm -f $CONFIG_DIR/kitty.conf
 
 # Symlink the kitty config file
-ln -s ../config/kitty.conf $CONFIG_DIR/kitty.conf
+ln -s $HOME/dotfiles/config/kitty.conf $CONFIG_DIR/kitty.conf
 
 # Symlink the color theme files
-ln -s ../config/nord.conf $CONFIG_DIR/nord.conf
+ln -s $HOME/dotfiles/config/nord.conf $CONFIG_DIR/nord.conf
