@@ -13,6 +13,9 @@ source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
 # Load zoxide
 eval "$(zoxide init zsh)"
 
+# Load dir_colors
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

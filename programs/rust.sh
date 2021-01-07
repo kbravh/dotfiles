@@ -5,4 +5,4 @@ curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -qy
 source $HOME/.cargo/env # Load for Rust
 
 # Install Rust packages
-cargo install bottom exa ripgrep zoxide bat
+cargo install bottom exa ripgrep zoxide bat git-delta

@@ -12,7 +12,8 @@ unlet autoload_plug_path
 "*** Install plugins ***
 call plug#begin(stdpath('data') . '/plugged')
   Plug 'arcticicestudio/nord-vim'
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
   Plug 'vim-airline/vim-airline'
   Plug 'mattn/emmet-vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -73,5 +74,5 @@ set shiftwidth  =2
 set expandtab
 
 "*** Shortcuts ***
-nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-b> :CHADopen<CR>
 nnoremap <C-p> :Files<CR>

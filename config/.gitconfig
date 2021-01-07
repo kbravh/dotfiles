@@ -1,0 +1,22 @@
+[core]
+  pager = delta
+
+[delta]
+  plus-style = syntax "#003800"
+  minus-style = syntax bold "#5A5E60" 
+  hunk-header-style = omit
+  syntax-theme = Nord 
+  features = line-numbers
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
+
+[interactive]
+  diffFilter = delta --color-only
+
+[diff]
+  colorMoved = default
+[user]
+	name = Karey Higuera
+	email = karey.higuera@gmail.com
