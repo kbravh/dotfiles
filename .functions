@@ -3,11 +3,6 @@ take () {
   mkdir -pv -- "$1" && cd  -- "$1"
 }
 
-# Tail with bat and syntax highlighting
-tail () {
-  tail -f "$1" | bat --paging=never -l log
-}
-
 # Clone a git repo and move into the directory
 clone () {
   repo="$1" # stores repo name in variable
