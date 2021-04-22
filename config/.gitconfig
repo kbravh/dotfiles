@@ -20,3 +20,9 @@
 [user]
 	name = Karey Higuera
 	email = karey.higuera@gmail.com
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main

@@ -12,13 +12,13 @@ unlet autoload_plug_path
 "*** Install plugins ***
 call plug#begin(stdpath('data') . '/plugged')
   Plug 'arcticicestudio/nord-vim'
-  "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+  Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
   Plug 'vim-airline/vim-airline'
   Plug 'mattn/emmet-vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'ryanoasis/vim-devicons' "Always load this one last
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'ryanoasis/vim-devicons' "always list last
 call plug#end()
 
 " Install all plugins if first time installing vim-plug
@@ -30,8 +30,10 @@ unlet plug_install
 "*** Theming ***
 colorscheme nord
 
-"Airline
-" air-line
+" CHADtree
+let g:chadtree_settings = {"theme.icon_glyph_set": "devicons","theme.text_colour_set": "nord"}
+
+" Airline
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -62,7 +64,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 "*** Code Editing ***
-syntax enable
+"syntax enable
 
 " tabstop:          Width of tab character
 " softtabstop:      Fine tunes the amount of white space to be added
