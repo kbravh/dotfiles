@@ -32,10 +32,11 @@ setopt HIST_VERIFY # expand history line into buffer before executing
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-fpath=($fpath "/home/karey/.zfunctions")
+fpath=($fpath "/home/kbravh/.zfunctions")
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
+autoload -Uz promptinit
+promptinit
 prompt spaceship
 
 SPACESHIP_PROMPT_ORDER=(
@@ -48,7 +49,6 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 SPACESHIP_CHAR_SYMBOL="λ "
-fpath=($fpath "/home/karey/.zfunctions")
 
 # tabtab source for packages
 # uninstall by removing these lines

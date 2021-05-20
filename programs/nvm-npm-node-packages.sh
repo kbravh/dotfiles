@@ -13,7 +13,7 @@ nvm install node
 nvm install-latest-npm
 
 # Install Yarn
-apt update && apt install --no-install-recommends yarn
+npm i -g yarn
 
 # Install Node packages via Yarn
 yarn global add spaceship-prompt tweet-to-markdown rome gatsby-cli trash-cli carbon-now-cli neovim

@@ -1,16 +1,21 @@
 #!/bin/bash
 
 echo "Installing Debian packages"
+
+# Add repositories
+add-apt-repository ppa:hsheth2/ppa
+apt update
+
 # Update Ubuntu and get standard repository programs
 apt update && apt full-upgrade -y
 
 source ./util.sh
 
 install tmux
-install libevent
-install ncurses
+install libevent-dev
+install libncurses5-dev
+install libncursesw5-dev
 install git
-install chromium-browser
 install curl
 install file
 install gimp
