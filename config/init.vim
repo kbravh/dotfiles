@@ -70,10 +70,17 @@ let g:airline_symbols.linenr = ''
 " softtabstop:      Fine tunes the amount of white space to be added
 " shiftwidth        Determines the amount of whitespace to add in normal mode
 " expandtab:        When this option is enabled, vi will use spaces instead of tabs
+" scrolloff:	    Begins scrolling the window when at the specified distance
+"                       from the bottom
+" number            Show line numbers
+" relativenumber    LIne numbers are relative to current line
 set tabstop     =2
 set softtabstop =2
 set shiftwidth  =2
 set expandtab
+set scrolloff   =8
+set number
+set relativenumber
 
 "*** Shortcuts ***
 nnoremap <C-b> :CHADopen<CR>
