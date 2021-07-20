@@ -2,7 +2,7 @@
 
 dir="/home/kbravh/dotfiles"                                      # dotfiles repo directory
 olddir="/home/kbravh/dotfiles_old"                               # old dotfiles backup directory
-files=".bashrc .zshrc .aliases .functions .env .inputrc .hyper.js"    # list of files/folders to symlink in homedir
+files=".bashrc .zshrc .aliases .functions .env .inputrc"    # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -17,7 +17,7 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Moving any existing dotfiles from ~ to $olddir"
 for file in $files; do
-    mv ~/$file ~/dotfiles_old/
+    [[ -f $file ]] && mv /home/kbravh/$file /home/kbravh/dotfiles_old/
     echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/$file
+    ln -s $dir/$file /home/kbravh/$file
 done

@@ -6,7 +6,7 @@ apt update
 apt install fonts-twemoji-svginot
 
 # Install fonts
-FONTS_DIR=~/.local/share/fonts
+FONTS_DIR=/home/kbravh/.local/share/fonts
 mkdir $FONTS_DIR
 cp -Rv ../.fonts/* $FONTS_DIR
 fc-cache -f -v
