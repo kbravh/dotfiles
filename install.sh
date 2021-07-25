@@ -29,6 +29,9 @@ install fzf
 install fd-find
 install xclip
 install sad
+install ffmpeg
+install kitty
+install neovim # move to neovim nightly
 
 # Run all scripts in programs/
 #for f in programs/*.sh; do bash "$f" -H; done
