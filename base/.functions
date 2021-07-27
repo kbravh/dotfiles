@@ -39,6 +39,14 @@ ex () {
   fi
 }
 
+dangle () {
+  for image in $(docker images -qa -f 'dangling=true' | xargs)
+  do
+    echo "Removing image $image"
+    docker rmi -f $image &> /dev/null
+  done
+}
+
 # Attaches a Spanish audio track to a video file
 span () {
   ffmpeg -i $1 -i $2 -map 0 -map 1:a -c:v copy -shortest -metadata:s:a:1 title="Español" -metadata:s:a:1 language=spa $3

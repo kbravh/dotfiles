@@ -1,4 +1,4 @@
-" Bootstrap vim-plug
+"** Bootstrap vim-plug **
 let plug_install = 0
 let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
 if !filereadable(autoload_plug_path)
@@ -9,16 +9,14 @@ if !filereadable(autoload_plug_path)
 endif
 unlet autoload_plug_path
 
-"*** Install plugins ***
-call plug#begin(stdpath('data') . '/plugged')
+"** Plugins **
+call plug#begin('~/.vim/plugged')
   Plug 'arcticicestudio/nord-vim'
-  Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-  Plug 'vim-airline/vim-airline'
-  Plug 'mattn/emmet-vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'ryanoasis/vim-devicons' "always list last
+  Plug 'mattn/emmet-vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Install all plugins if first time installing vim-plug
@@ -27,11 +25,23 @@ if plug_install
 endif
 unlet plug_install
 
-"*** Theming ***
-colorscheme nord
+"** Options **
+syntax enable
+filetype plugin indent on
+set tabstop	=2      " Width of tab character
+set softtabstop	=2  " Fine tunes the amount of white space to be added
+set shiftwidth	=2  " Determines the amount of whitespace to add in normal mode
+set expandtab       " When enabled, will use spaces instead of tabs
+set scrolloff	=8    " Scrolls the window when approaching # lines from the bottom
+set number          " Show line numbers
+set relativenumber  " Line numbers are relative to current line
+set incsearch       " Show where the pattern, as it was typed so far, matches
 
-" CHADtree
-let g:chadtree_settings = {"theme.icon_glyph_set": "devicons","theme.text_colour_set": "nord"}
+let g:markdown_fenced_languages = ['html', 'javascript', 'bash', 'rust']
+let g:rustfmt_autosave = 1
+
+"** Theming **
+colorscheme nord
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -63,25 +73,12 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-"*** Code Editing ***
-"syntax enable
-
-" tabstop:          Width of tab character
-" softtabstop:      Fine tunes the amount of white space to be added
-" shiftwidth        Determines the amount of whitespace to add in normal mode
-" expandtab:        When this option is enabled, vi will use spaces instead of tabs
-" scrolloff:	    Begins scrolling the window when at the specified distance
-"                       from the bottom
-" number            Show line numbers
-" relativenumber    LIne numbers are relative to current line
-set tabstop     =2
-set softtabstop =2
-set shiftwidth  =2
-set expandtab
-set scrolloff   =8
-set number
-set relativenumber
-
-"*** Shortcuts ***
-nnoremap <C-b> :CHADopen<CR>
-nnoremap <C-p> :Files<CR>
+"** Remaps **
+let mapleader = " "
+nnoremap <C-b> :Vex<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <C-b> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
+nnoremap <leader>y "+y
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
