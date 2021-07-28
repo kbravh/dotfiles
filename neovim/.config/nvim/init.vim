@@ -16,7 +16,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'mattn/emmet-vim'
   Plug 'vim-airline/vim-airline'
+  Plug 'vuciv/vim-bujo'
   Plug 'rust-lang/rust.vim'
+  Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 " Install all plugins if first time installing vim-plug
@@ -39,6 +41,14 @@ set incsearch       " Show where the pattern, as it was typed so far, matches
 
 let g:markdown_fenced_languages = ['html', 'javascript', 'bash', 'rust']
 let g:rustfmt_autosave = 1
+
+" Bujo
+nmap <C-S> <Plug>BujoAddnormal
+imap <C-S> <Plug>BujoAddinsert
+nmap <C-Q> <Plug>BujoChecknormal
+imap <C-Q> <Plug>BujoCheckinsert
+nnoremap <leader>T :Todo<CR>
+let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
 
 "** Theming **
 colorscheme nord
