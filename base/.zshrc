@@ -25,6 +25,9 @@ setopt HIST_FIND_NO_DUPS # don't show duplicates when stepping through history
 setopt HIST_IGNORE_ALL_DUPS # don't write duplicates to history
 setopt HIST_VERIFY # expand history line into buffer before executing
 
+# case insensitive tab completion
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

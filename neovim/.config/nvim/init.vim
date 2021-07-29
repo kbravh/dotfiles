@@ -42,11 +42,22 @@ set incsearch       " Show where the pattern, as it was typed so far, matches
 let g:markdown_fenced_languages = ['html', 'javascript', 'bash', 'rust']
 let g:rustfmt_autosave = 1
 
+"** Remaps **
+let mapleader = " "
+nnoremap <C-b> :Vex<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <C-b> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
+nnoremap <leader>y "+y
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-c> <esc>
+
 " Bujo
-nmap <C-S> <Plug>BujoAddnormal
-imap <C-S> <Plug>BujoAddinsert
-nmap <C-Q> <Plug>BujoChecknormal
-imap <C-Q> <Plug>BujoCheckinsert
+nmap <C-t> <Plug>BujoAddnormal
+imap <C-t> <Plug>BujoAddinsert
+nmap <C-d> <Plug>BujoChecknormal
+imap <C-d> <Plug>BujoCheckinsert
 nnoremap <leader>T :Todo<CR>
 let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
 
@@ -83,12 +94,3 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-"** Remaps **
-let mapleader = " "
-nnoremap <C-b> :Vex<CR>
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <C-b> :GFiles<CR>
-nnoremap <leader>pf :Files<CR>
-nnoremap <leader>y "+y
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
