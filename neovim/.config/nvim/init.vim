@@ -46,7 +46,6 @@ let g:rustfmt_autosave = 1
 let mapleader = " "
 nnoremap <C-b> :Vex<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <C-b> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <leader>y "+y
 vnoremap J :m '>+1<CR>gv=gv

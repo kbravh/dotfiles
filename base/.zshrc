@@ -2,7 +2,6 @@
 source "$HOME/.env"
 source "$HOME/.functions"
 source "$HOME/.aliases"
-source "$HOME/.inputrc"
 
 # Load zsh plugins
 source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
@@ -27,6 +26,9 @@ setopt HIST_VERIFY # expand history line into buffer before executing
 
 # case insensitive tab completion
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+
+# tab completion of hidden files and folders
+_comp_options+=(globdots)
 
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
