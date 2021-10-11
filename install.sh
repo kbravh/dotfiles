@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu -o pipefail # fail on error , debug all lines
+
 echo "Installing Debian packages"
 
 # Add repositories
@@ -18,7 +20,7 @@ install libncursesw5-dev
 install git
 install curl
 install file
-install gimp
+#install gimp
 install figlet
 install lolcat
 install rar
@@ -30,7 +32,7 @@ install fd-find
 install xclip
 install sad
 install ffmpeg
-install kitty
+#install kitty
 install neovim # move to neovim nightly
 
 # Run all scripts in programs/
