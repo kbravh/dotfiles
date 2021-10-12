@@ -15,5 +15,8 @@ nvm install-latest-npm
 # Install Yarn
 npm i -g yarn
 
+# allow post scripts to run
+npm config set ignore-scripts false
+
 # Install Node packages via Yarn
 yarn global add spaceship-prompt tweet-to-markdown rome gatsby-cli trash-cli carbon-now-cli neovim
