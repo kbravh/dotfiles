@@ -39,6 +39,8 @@ set scrolloff	=8    " Scrolls the window when approaching # lines from the botto
 set number          " Show line numbers
 set relativenumber  " Line numbers are relative to current line
 set incsearch       " Show where the pattern, as it was typed so far, matches
+set ignorecase      " Makes pattern matching case-insensitive
+set smartcase       " Overrides ignorecase if your pattern contains mixed case
 
 let g:markdown_fenced_languages = ['html', 'javascript', 'bash', 'rust', 'typescript']
 let g:rustfmt_autosave = 1
