@@ -78,3 +78,23 @@ SPACESHIP_CHAR_SYMBOL="λ "
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 fpath=($fpath "/home/kbravh/.zfunctions")
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+PROG=croc
+_CLI_ZSH_AUTOCOMPLETE_HACK=1
+source /etc/zsh/zsh_autocomplete_croc
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/kbravh/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+# bun completions
+[ -s "/home/kbravh/.bun/_bun" ] && source "/home/kbravh/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/kbravh/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+fpath=($fpath "/home/kbravh/.zfunctions")
+fpath=($fpath "/home/kbravh/.zfunctions")
