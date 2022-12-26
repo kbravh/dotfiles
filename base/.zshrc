@@ -97,4 +97,4 @@ export PATH="$PNPM_HOME:$PATH"
 export BUN_INSTALL="/home/kbravh/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 fpath=($fpath "/home/kbravh/.zfunctions")
-fpath=($fpath "/home/kbravh/.zfunctions")
+

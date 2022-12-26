@@ -38,6 +38,7 @@ alias scripts="cat package.json | jq '. | .scripts'"
 alias aria="aria2c --seed-time=0"
 alias todo="todo.sh"
 alias rg="rg --hidden"
+alias stable="bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)"
 # Use batman if it exists
 if command -v batman $> /dev/null 
 then
