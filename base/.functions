@@ -76,3 +76,25 @@ urldecode() {
     local url_encoded="${1//+/ }"
     printf '%b' "${url_encoded//%/\\x}"
 }
+
+# Encode videos to h.265/HEVC
+hevc() {
+  for filename in $1; do
+    # Get codecs
+    video_codec=$(ffprobe -v error -select_streams 'v:0' -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 "${filename}")
+    audio_codec=$(ffprobe -v error -select_streams 'a:0' -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 "${filename}")
+
+    if [ "$video_codec" = "hevc" ]; then
+        echo "Skipping (already HVC1): ${filename}"
+    else
+        #video_opts="-c:v libx265 -crf 28 -tag:v hvc1 -preset slow"
+        if [ "$audio_codec" = "aac" ]; then
+            #audio_opts="-c:a copy"
+            ffmpeg -i "${filename}" -c:v libx265 -crf 28 -tag:v hvc1 -preset slow -c:a copy "${filename%.*}.hvc1.mp4"
+        else
+            #audio_opts="-c:a aac -b:a 128k"
+            ffmpeg -i "${filename}" -c:v libx265 -crf 28 -tag:v hvc1 -preset slow -c:a aac -b:a 128k "${filename%.*}.hvc1.mp4"
+        fi
+    fi
+  done
+}

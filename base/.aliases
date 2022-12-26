@@ -20,7 +20,7 @@ alias vpnd="vpn disconnect"
 alias vpns="vpn status"
 alias gc="gatsby clean"
 alias gd="gatsby develop"
-alias ttm="ttm -t -q -p $HOME/glass-notes -a --assets-path $HOME/glass-notes/assets"
+alias ttm="npx tweet-to-markdown -q -p $HOME/glass-notes -a --assets-path $HOME/glass-notes/assets"
 alias untar="tar -zxvf"
 alias clip="xclip -selection c"
 alias fd="fdfind"
@@ -35,7 +35,10 @@ alias ssh="kitty +kitten ssh"
 alias cr="cargo run"
 alias cc="cargo check"
 alias scripts="cat package.json | jq '. | .scripts'"
-
+alias aria="aria2c --seed-time=0"
+alias todo="todo.sh"
+alias rg="rg --hidden"
+alias stable="bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)"
 # Use batman if it exists
 if command -v batman $> /dev/null 
 then
