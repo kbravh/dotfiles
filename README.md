@@ -8,7 +8,7 @@ Clone the repo with the following command in order to clone the submodules:
 git clone --recurse-submodules <repo>
 ```
 
-Next, install the list of programs by running the `install.sh` script as sudo.
+Next, install the list of programs by running the `install.sh` script.
 
 After installing necessary packages, you'll need to set up symlinks using the `stow` application.
 Assuming you run `stow` from `/home/kbravh/dotfiles`, `stow` will symlink to the parent directory
