@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ../util.sh
+source ./util.sh
 
-install zsh
+deb_install zsh
 
 # Set zsh as the default shell
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)

@@ -2,48 +2,58 @@
 
 set -eu -o pipefail # fail on error , debug all lines
 
-echo "Installing Debian packages"
+echo "Adding repositories"
 
 # Add repositories
 # - Cava repository
-sudo add-apt-repository ppa:hsheth2/ppa
+sudo add-apt-repository ppa:hsheth2/ppa -y
 # - Git
-sudo add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:git-core/ppa -y
 
 # Update Ubuntu
-sudo apt update && apt full-upgrade -y
+sudo apt update
+sudo apt full-upgrade -y
 
 # Install standard repository applications
+
+echo "Installing Debian packages"
 source ./util.sh
 
-install tmux
-install libevent-dev
-install libncurses5-dev
-install libncursesw5-dev
-install git
-install curl
-install file
-install figlet
-install lolcat
-install rar
-install unrar
-install cava
-install cmus
-install fzf
-install fd-find
-install xclip
-install sad
-install ffmpeg
+deb_install tmux
+deb_install libevent-dev
+deb_install libncurses5-dev
+deb_install libncursesw5-dev
+deb_install git
+deb_install curl
+deb_install file
+deb_install figlet
+deb_install lolcat
+deb_install rar
+deb_install unrar
+deb_install cava
+deb_install cmus
+deb_install fzf
+deb_install fd-find
+deb_install xclip
+deb_install sad
+deb_install ffmpeg
+deb_install stow
+
+echo "Debian packages installed. Installing programs..."
 
 # Run all scripts in programs/
-for f in programs/*.sh; do bash "$f" -H; done
+for f in programs/*.sh
+do 
+  echo "Running $f"
+  bash "$f" -H
+done
 
 # Get all upgrades
 sudo apt upgrade -y
 sudo apt autoremove -y
 
 # Reload so all applications are available
-source ~/.zshrc
+source ~/.bashrc
 
 # Show confirmation message
 figlet "Systems are go." | lolcat
