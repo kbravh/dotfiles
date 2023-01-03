@@ -59,9 +59,10 @@ load-nvmrc
 fpath=($fpath "/home/kbravh/.zfunctions")
 
 # Set Spaceship ZSH as a prompt
+source "$HOME/.zsh/spaceship/spaceship.zsh"
 autoload -Uz promptinit
 promptinit
-prompt spaceship
+#prompt spaceship
 
 SPACESHIP_PROMPT_ORDER=(
   user
@@ -79,10 +80,6 @@ SPACESHIP_CHAR_SYMBOL="λ "
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 fpath=($fpath "/home/kbravh/.zfunctions")
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-PROG=croc
-_CLI_ZSH_AUTOCOMPLETE_HACK=1
-source /etc/zsh/zsh_autocomplete_croc
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
