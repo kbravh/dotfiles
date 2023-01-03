@@ -113,45 +113,43 @@
 font:
   # Normal (roman) font face
   normal:
-     Font family
-
-    family: MesloLGS NF
+    family: MesloLGS NF:style=Regular
 
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: MesloLGS NF:style=Bold
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: MesloLGS NF:style=Italic
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: MesloLGS NF:style=Bold Italic
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    style: Bold Italic
 
   # Point size
   #size: 11.0
@@ -181,73 +179,34 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Color schemes
-schemes:
-# Colors (Night Owl)
-  night_owl: &night_owl
-    # Default colors
-    primary:
-      background: '#011627'
-      foreground: '#d6deeb'
-
-    cursor:
-      text: '#011627'
-      cursor: '#d6deeb'
-
-    selection:
-      background: '#1b90dd'
-
-    # Normal colors
-    normal:
-      black:   '#011627'
-      red:     '#ef5350'
-      green:   '#22da6e'
-      yellow:  '#c5e478'
-      blue:    '#82aaff'
-      magenta: '#c792ea'
-      cyan:    '#21c7a8'
-      white:   '#ffffff'
-
-    # Bright colors
-    bright:
-      black:   '#575656'
-      red:     '#ef5350'
-      green:   '#22da6e'
-      yellow:  '#ffeb95'
-      blue:    '#82aaff'
-      magenta: '#c792ea'
-      cyan:    '#7fdbca'
-      white:   '#ffffff'
-
   # Colors (Nord)
-  nord: &nord
-    # Default colors
-    primary:
-      background: '#2E3440'
-      foreground: '#D8DEE9'
+colors:
+  # Default colors
+  primary:
+    background: '#2E3440'
+    foreground: '#D8DEE9'
 
-    # Normal colors
-    normal:
-      black:   '#3B4252'
-      red:     '#BF616A'
-      green:   '#A3BE8C'
-      yellow:  '#EBCB8B'
-      blue:    '#81A1C1'
-      magenta: '#B48EAD'
-      cyan:    '#88C0D0'
-      white:   '#E5E9F0'
+  # Normal colors
+  normal:
+    black:   '#3B4252'
+    red:     '#BF616A'
+    green:   '#A3BE8C'
+    yellow:  '#EBCB8B'
+    blue:    '#81A1C1'
+    magenta: '#B48EAD'
+    cyan:    '#88C0D0'
+    white:   '#E5E9F0'
 
-    # Bright colors
-    bright:
-      black:   '#4C566A'
-      red:     '#BF616A'
-      green:   '#A3BE8C'
-      yellow:  '#EBCB8B'
-      blue:    '#81A1C1'
-      magenta: '#B48EAD'
-      cyan:    '#8FBCBB'
-      white:   '#ECEFF4'
-
-colors: &night_owl
+  # Bright colors
+  bright:
+    black:   '#4C566A'
+    red:     '#BF616A'
+    green:   '#A3BE8C'
+    yellow:  '#EBCB8B'
+    blue:    '#81A1C1'
+    magenta: '#B48EAD'
+    cyan:    '#8FBCBB'
+    white:   '#ECEFF4'
 
 # Colors (Tomorrow Night)
 #colors:
