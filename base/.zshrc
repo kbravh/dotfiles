@@ -95,3 +95,4 @@ export BUN_INSTALL="/home/kbravh/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 fpath=($fpath "/home/kbravh/.zfunctions")
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions
