@@ -98,3 +98,8 @@ hevc() {
     fi
   done
 }
+
+# Shows the process using a specified port number
+port() {
+  lsof -i :$1
+}
