@@ -34,6 +34,11 @@ _comp_options+=(globdots)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# load direnv
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Autoload nvm version from .nvmrc if found
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -56,13 +61,10 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-fpath=($fpath "/home/kbravh/.zfunctions")
-
 # Set Spaceship ZSH as a prompt
 source "$HOME/.zsh/spaceship/spaceship.zsh"
 autoload -Uz promptinit
 promptinit
-#prompt spaceship
 
 SPACESHIP_PROMPT_ORDER=(
   user
