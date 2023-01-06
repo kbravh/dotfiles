@@ -136,37 +136,37 @@ font:
   # Color schemes
   # Colors (Nord)
 colors:
-  # Default colors
-  primary:
-    background: '#292C3E'
-    foreground: '#EBEBEB'
-
-  # Cursor colors
   cursor:
-    text: '#FF261E'
-    cursor: '#FF261E'
+    text: '#fefff2'
+    cursor: '#f0cc09'
 
-  # Normal colors
+  selection:
+    text: '#b5b5b5'
+    background: '#18354f'
+
+  primary:
+    background: '#132738'
+    foreground: '#ffffff'
+
   normal:
-    black: '#0d0d0d'
-    red: '#FF301B'
-    green: '#A0E521'
-    yellow: '#FFC620'
-    blue: '#1BA6FA'
-    magenta: '#8763B8'
-    cyan: '#21DEEF'
-    white: '#EBEBEB'
+    black: '#000000'
+    red: '#ff0000'
+    green: '#38de21'
+    yellow: '#ffe50a'
+    blue: '#1460d2'
+    magenta: '#ff005d'
+    cyan: '#00bbbb'
+    white: '#bbbbbb'
 
-  # Bright colors
   bright:
-    black: '#6D7070'
-    red: '#FF4352'
-    green: '#B8E466'
-    yellow: '#FFD750'
-    blue: '#1BA6FA'
-    magenta: '#A578EA'
-    cyan: '#73FBF1'
-    white: '#FEFEF8'
+    black: '#555555'
+    red: '#f40e17'
+    green: '#3bd01d'
+    yellow: '#edc809'
+    blue: '#5555ff'
+    magenta: '#ff55ff'
+    cyan: '#6ae3fa'
+    white: '#ffffff'
 cursor:
   # Cursor style
   style:
@@ -652,4 +652,4 @@ cursor:
   #print_events: false
   # Highlight window damage information.
   #highlight_damage: false
-theme: Argonaut
+theme: Cobalt-2
