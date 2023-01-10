@@ -25,6 +25,7 @@ deb_install libncurses5-dev
 deb_install libncursesw5-dev
 deb_install git
 deb_install curl
+deb_install flameshot
 deb_install file
 deb_install figlet
 deb_install lolcat
