@@ -40,6 +40,7 @@ deb_install sad
 deb_install ffmpeg
 deb_install stow
 deb_install miller
+deb_install snapd
 
 echo "Debian packages installed. Installing programs..."
 
