@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Grab a count of how many sinks we have
+# Grab a count of how many audio sinks we have
 sink_count=$(pacmd list-sinks | grep -c "index:[[:space:]][[:digit:]]")
 # Create an array of the actual sink IDs
 sinks=()
 mapfile -t sinks < <(pacmd list-sinks | grep 'index:[[:space:]][[:digit:]]' | sed -n -e 's/.*index:[[:space:]]\([[:digit:]]\)/\1/p')
 # Get the ID of the active sink
-active_sink=$(pacmd list-sinks | sed -n -e 's/\*[[:space:]]index:[[:space:]]\([[:digit:]]\)/\1/p')
+active_sink=$(pacmd list-sinks | sed -n -e 's/[[:space:]]*\*[[:space:]]index:[[:space:]]\([[:digit:]]\)/\1/p')
 # Get the ID of the last sink in the array
 final_sink=${sinks[$((sink_count - 1 ))]}
 
@@ -38,12 +38,16 @@ done
 
 # Create a list of the sink descriptions
 sink_descriptions=()
-mapfile -t sink_descriptions < <(pacmd list-sinks | sed -n -e 's/.*alsa.name[[:space:]]=[[:space:]]"\(.*\)"/\1/p')
+if pgrep pulseaudio > /dev/null; then
+	mapfile -t sink_descriptions < <(pacmd list-sinks | sed -n -e 's/.*alsa.name[[:space:]]=[[:space:]]"\(.*\)"/\1/p')
+elif pgrep pipewire > /dev/null; then
+	mapfile -t sink_descriptions < <(pactl list sinks | sed -n -e 's/.*Description:[[:space:]]\+\(.*\)/\1/p')
+else
+	echo "Neither PulseAudio nor PipeWire is running."
+fi
+
 # Find the index that matches our new active sink
-echo "next sink index: ${next_sink_index}"
 for sink_index in "${!sink_descriptions[@]}"; do
-  echo "sink_index:  ${sink_index}"
-  echo "sink description: ${sink_descriptions[$sink_index]}"
   if [[ "$sink_index" == "$next_sink_index" ]] ; then
     notify-send -i audio-volume-high "Sound output switched to ${sink_descriptions[$sink_index]}"
     exit
