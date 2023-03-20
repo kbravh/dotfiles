@@ -6,7 +6,8 @@ alias myip="curl ipinfo.io/ip"
 alias weather="curl wttr.in"
 alias ll="exa -1 -a --icons --color=always"
 alias la="exa -la --icons"
-alias yt="youtube-dl -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3 --no-call-home"
+#alias yt="youtube-dl -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3 --no-call-home"
+alias yt="yt-dlp -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3 --no-call-home"
 alias bat="bat"
 alias batpage="--paging=never -l log"
 alias vpn="expressvpn"
@@ -34,6 +35,7 @@ alias stable="bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/s
 # Git
 alias wka="git worktree add"
 alias wkr="git worktree remove"
+alias unreal="/home/kbravh/Linux_Unreal_Engine_5.1.1/Engine/Binaries/Linux/UnrealEditor"
 
 # Use batman if it exists
 if command -v batman $> /dev/null 
