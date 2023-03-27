@@ -18,13 +18,15 @@ if [[ "$sound_server" == "pulseaudio" ]]; then
   mapfile -t sinks < <(pacmd list-sinks | grep 'index:[[:space:]][[:digit:]]' | sed -n -e 's/.*index:[[:space:]]\([[:digit:]]\)/\1/p')
   # Get the ID of the active sink
   active_sink=$(pacmd list-sinks | sed -n -e 's/[[:space:]]*\*[[:space:]]index:[[:space:]]\([[:digit:]]\)/\1/p')
+
 elif [[ "$sound_server" == "pipewire" ]]; then
-  sink_count=$(pactl list sinks | grep -c "Sink #[[:space:]][[:digit:]]")
+  sink_count=$(pactl list sinks | grep -c "Sink #[[:digit:]]")
   # Create an array of the actual sink IDs
   sinks=()
-  mapfile -t sinks < <(pactl list sinks | grep 'Sink #[[:space:]][[:digit:]]' | sed -n -e 's/.*Sink #[[:space:]]\([[:digit:]]\)/\1/p')
+  mapfile -t sinks < <(pactl list sinks | grep 'Sink #[[:digit:]]' | sed -n -e 's/.*Sink #\([[:digit:]]\)/\1/p')
   # Get the ID of the active sink
-  active_sink=$(pactl info | grep 'Default Sink:' | sed -n -e 's/.*Default Sink:[[:space:]]\+\(.*\)/\1/p')
+  active_sink_name=$(pactl info | grep 'Default Sink:' | sed -n -e 's/.*Default Sink:[[:space:]]\+\(.*\)/\1/p')
+  active_sink=$(pactl list sinks | grep -B 2 "$active_sink_name" | sed -n -e 's/Sink #\([[:digit:]]\)/\1/p' | head -n 1)
 fi
 
 # Get the ID of the last sink in the array
@@ -51,7 +53,9 @@ fi
 if [[ "$sound_server" == "pulseaudio" ]]; then
   pacmd "set-default-sink ${next_sink}"
 elif [[ "$sound_server" == "pipewire" ]]; then
-  pw-cli set-default-sink "$next_sink"
+  # Get the name of the next sink
+  next_sink_name=$(pactl list sinks | grep -C 2 "Sink #$next_sink" | sed -n -e 's/.*Name:[[:space:]]\+\(.*\)/\1/p' | head -n 1)
+  pactl set-default-sink "$next_sink_name"
 fi
 
 #move all inputs to the new sink
@@ -61,7 +65,7 @@ if [[ "$sound_server" == "pulseaudio" ]]; then
   done
 elif [[ "$sound_server" == "pipewire" ]]; then
   for app in $(pactl list sink-inputs | sed -n -e 's/.*Sink Input #\([[:digit:]]\)/\1/p'); do
-    pactl move-sink-input "$app" "$next_sink"
+    pactl "move-sink-input $app $next_sink"
   done
 fi
 
