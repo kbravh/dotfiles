@@ -1,5 +1,8 @@
-# Create a new session named "stable" and run the "stable" command
-new-session -n stable -s stable 'stable'
+# Create a new session named "stable"
+new-session -n stable -s stable
+
+# Send the "stable" command to the first pane
+send-keys 'stable' Enter
 
 # Split the window horizontally
 split-window -h
