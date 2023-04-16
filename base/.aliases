@@ -36,6 +36,7 @@ alias stable="bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/s
 alias wka="git worktree add"
 alias wkr="git worktree remove"
 alias unreal="/home/kbravh/Linux_Unreal_Engine_5.1.1/Engine/Binaries/Linux/UnrealEditor"
+alias unstable="tmux -f /home/kbravh/tmux/stable.tmux attach"
 
 # Use batman if it exists
 if command -v batman $> /dev/null 
