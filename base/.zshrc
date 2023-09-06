@@ -3,12 +3,6 @@ source "$HOME/.env"
 source "$HOME/.functions"
 source "$HOME/.aliases"
 
-# Load zsh plugins
-source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
-
-# Load zoxide
-eval "$(zoxide init zsh)"
-
 # Load dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
@@ -34,37 +28,8 @@ _comp_options+=(globdots)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# load direnv
-if command -v direnv &> /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
-
-# Autoload nvm version from .nvmrc if found
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
 # Set Spaceship ZSH as a prompt
-source "$HOME/.zsh/spaceship/spaceship.zsh"
-autoload -Uz promptinit
-promptinit
+echo "source $(brew --prefix)/opt/spaceship/spaceship.zsh" >>! ~/.zshrc
 
 SPACESHIP_PROMPT_ORDER=(
   user
@@ -77,24 +42,6 @@ SPACESHIP_PROMPT_ORDER=(
 
 SPACESHIP_CHAR_SYMBOL="λ "
 
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-fpath=($fpath "/home/kbravh/.zfunctions")
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# pnpm
-export PNPM_HOME="/home/kbravh/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-# bun completions
-[ -s "/home/kbravh/.bun/_bun" ] && source "/home/kbravh/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/home/kbravh/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-fpath=($fpath "/home/kbravh/.zfunctions")
-
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+source /opt/homebrew/opt/spaceship/spaceship.zsh
