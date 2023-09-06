@@ -45,3 +45,6 @@ SPACESHIP_CHAR_SYMBOL="λ "
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
