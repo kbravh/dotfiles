@@ -1,8 +1,7 @@
 layouts:
   - tall
-  - fullscreen
   - wide
-  - column
+  - fullscreen
 
 mod1:
   - option
@@ -21,8 +20,6 @@ toggle-tiling:
   mod: mod1
   key: t
 
-window-margin-size: 5
-
 mouse-follows-focus: true
 
 use-canary-build: true
@@ -31,4 +28,33 @@ screen-padding-left: 12
 screen-padding-right: 12
 screen-padding-top: 12
 screen-padding-bottom: 12
+
+window-margins: true
+smart-window-margins: true
+window-margin-size: 5
+
+# key bindings
+focus-screen-1:
+  mod: mod1
+  key: 1
+
+focus-screen-2:
+  mod: mod1
+  key: 2
+
+focus-screen-3:
+  mod: mod1
+  key: 3
+
+throw-screen-1:
+  mod: mod2
+  key: 1
+
+throw-screen-2:
+  mod: mod2
+  key: 2
+
+throw-screen-3:
+  mod: mod3
+  key: 3
 
