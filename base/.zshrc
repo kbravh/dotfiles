@@ -24,13 +24,7 @@ zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
 # tab completion of hidden files and folders
 _comp_options+=(globdots)
 
-# nvm settings
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Set Spaceship ZSH as a prompt
-echo "source $(brew --prefix)/opt/spaceship/spaceship.zsh" >>! ~/.zshrc
-
+# Alter Spaceship prompt
 SPACESHIP_PROMPT_ORDER=(
   user
   dir
@@ -42,13 +36,4 @@ SPACESHIP_PROMPT_ORDER=(
 
 SPACESHIP_CHAR_SYMBOL="λ "
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
 source /opt/homebrew/opt/spaceship/spaceship.zsh

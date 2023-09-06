@@ -1,0 +1,34 @@
+layouts:
+  - tall
+  - fullscreen
+  - wide
+  - column
+
+mod1:
+  - option
+  - shift
+
+mod2:
+  - option
+  - shift
+  - command
+
+reevaluate-windows:
+  mod: mod1
+  key: z
+
+toggle-tiling:
+  mod: mod1
+  key: t
+
+window-margin-size: 5
+
+mouse-follows-focus: true
+
+use-canary-build: true
+
+screen-padding-left: 12
+screen-padding-right: 12
+screen-padding-top: 12
+screen-padding-bottom: 12
+
