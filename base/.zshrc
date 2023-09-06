@@ -48,3 +48,7 @@ source /opt/homebrew/opt/spaceship/spaceship.zsh
 source /opt/homebrew/opt/spaceship/spaceship.zsh
 source /opt/homebrew/opt/spaceship/spaceship.zsh
 source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
+source /opt/homebrew/opt/spaceship/spaceship.zsh
