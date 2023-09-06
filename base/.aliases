@@ -18,8 +18,6 @@ alias scripts="cat package.json | jq '. | .scripts'"
 alias aria="aria2c --seed-time=0"
 alias todo="todo.sh"
 alias rg="rg --hidden"
-# croc fails for me on mac without sudo -_-
-alias croc="sudo croc"
 
 # Git
 alias wka="git worktree add"
