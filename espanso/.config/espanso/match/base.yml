@@ -24,5 +24,20 @@ matches:
         type: shell
         params:
           cmd: uuidgen
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m-%d-%Y"
+  
+# shrug emote
+  - trigger: ":shrug"
+    replace: "¯\_(ツ)_/¯"
+
+# Email address
+  - trigger: ":email"
+    replace: "karey.higuera@churchofjesuschrist.org"
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/
