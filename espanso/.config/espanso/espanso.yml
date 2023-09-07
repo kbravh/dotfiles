@@ -16,15 +16,6 @@ matches:
         params:
           format: "%m-%d-%Y"
 
-  # Shell commands
-  - trigger: ":shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "echo Hello from your shell"
-
 # Shrug emoji
   - trigger: ":shrug"
     replace: "¯\_(ツ)_/¯"
@@ -33,20 +24,6 @@ matches:
   - trigger: ":star"
     image_path: "$CONFIG/images/star.gif"
 
-# Markdown image
-  - trigger: ":mdimg"
-    replace: "![$|$]({{clipboard}})"
-    vars:
-      - name: "clipboard"
-        type: "clipboard"
-
-# Markdown link
-  - trigger: ":mdlink"
-    replace: "[$|$]({{clipboard}})"
-    vars:
-      - name: "clipboard"
-        type: "clipboard"
-
 # Email address
   - trigger: ":email"
-    replace: "karey.higuera@gmail.com"
+    replace: "karey.higuera@churchofjesuschrist.org"
