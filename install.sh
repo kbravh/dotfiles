@@ -17,4 +17,5 @@ brew install git-delta # pager used for Git log
 # Casks
 brew install --cask flameshot
 brew install --cask amethyst
+brew install --cask keycastr
 
