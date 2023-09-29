@@ -1,11 +1,10 @@
--- Load and install the Hyper key extension. Binding to F18
-local hyper = require('hyper')
-hyper.install('F18')
-
 -- Quick reloading of Hammerspoon
-hyper.bindKey('r', hs.reload)
+hs.hotkey.bindSpec({ {"cmd", "alt"}, "y"}, hs.reload)
 
--- Global Application Keyboard Shortcuts
-hyper.bindKey('t', function()
-  am.switchToAndFromApp("org.Alacritty")
-end)
+-- Show Hammerspoon console
+hs.hotkey.bindSpec({ {"cmd", "alt"}, "y"}, hs.toggleConsole)
+
+-- hs.hotkey.bind({"F17"}, "T", function()
+  -- hs.application.launchOrFocusByBundleID("org.Alacritty")
+  -- end
+-- )

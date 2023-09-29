@@ -37,3 +37,10 @@ SPACESHIP_PROMPT_ORDER=(
 SPACESHIP_CHAR_SYMBOL="λ "
 
 source /opt/homebrew/opt/spaceship/spaceship.zsh
+
+# bun completions
+[ -s "/Users/kareybh/.bun/_bun" ] && source "/Users/kareybh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -12,6 +12,7 @@ brew install ripgrep
 brew install fd
 brew install jq
 brew install espanso
+brew install git-delta # pager used for Git log
 
 # Casks
 brew install --cask flameshot
