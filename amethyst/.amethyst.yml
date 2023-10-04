@@ -20,6 +20,10 @@ toggle-tiling:
   mod: mod1
   key: t
 
+swap-main:
+  mod: mod1
+  key: enter
+
 mouse-follows-focus: true
 
 use-canary-build: true
