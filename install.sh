@@ -14,6 +14,7 @@ brew install jq
 brew install espanso
 brew install git-delta # pager used for Git log
 brew install ngrok
+brew install bruno
 
 # Casks
 brew install --cask flameshot
