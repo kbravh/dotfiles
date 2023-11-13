@@ -23,6 +23,10 @@ alias code="code-insiders"
 alias wka="git worktree add"
 alias wkr="git worktree remove"
 
+# Github
+alias ghcs="gh copilot suggest"
+alias ghce="gh copilot explain"
+
 # Use batman if it exists
 if command -v batman $> /dev/null 
 then
