@@ -1,0 +1,97 @@
+[colors.bright]
+black = "#6D7070"
+blue = "#1BA6FA"
+cyan = "#73FBF1"
+green = "#B8E466"
+magenta = "#A578EA"
+red = "#FF4352"
+white = "#FEFEF8"
+yellow = "#FFD750"
+
+[colors.cursor]
+cursor = "#FF261E"
+text = "#FF261E"
+
+[colors.normal]
+black = "#0d0d0d"
+blue = "#1BA6FA"
+cyan = "#21DEEF"
+green = "#A0E521"
+magenta = "#8763B8"
+red = "#FF301B"
+white = "#EBEBEB"
+yellow = "#FFC620"
+
+[colors.primary]
+background = "#292C3E"
+foreground = "#EBEBEB"
+
+[cursor.style]
+blinking = "Off"
+shape = "Beam"
+
+[font]
+builtin_box_drawing = true
+size = 11.0
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u0002"
+key = "B"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+dynamic_title = true
+opacity = 0.95
+title = "Alacritty"
+
+[window.padding]
+x = 15
+y = 5
