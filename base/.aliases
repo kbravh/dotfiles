@@ -18,6 +18,7 @@ alias gco="git checkout"
 alias ttm="npx tweet-to-markdown -q -p $HOME/glass-notes -a --assets-path $HOME/glass-notes/assets"
 alias untar="tar -zxvf"
 alias clip="xclip -selection c"
+alias paste="xclip -selection c -o"
 alias fd="fdfind"
 alias cp="cp -Rv"
 alias mkdir="mkdir -pv"
@@ -31,12 +32,16 @@ alias scripts="cat package.json | jq '. | .scripts'"
 alias aria="aria2c --seed-time=0"
 alias todo="todo.sh"
 alias rg="rg --hidden"
-alias stable="bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)"
+alias stable="bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh) --opt-sdp-attention"
+alias automatic="bash /home/kbravh/automatic/webui.sh"
+
 # Git
 alias wka="git worktree add"
 alias wkr="git worktree remove"
+
 alias unreal="/home/kbravh/Linux_Unreal_Engine_5.1.1/Engine/Binaries/Linux/UnrealEditor"
 alias unstable="tmux -f /home/kbravh/tmux/stable.tmux attach"
+alias auto="tmux -f /home/kbravh/tmux/automatic.tmux attach"
 
 # Use batman if it exists
 if command -v batman $> /dev/null 

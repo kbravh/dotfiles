@@ -90,13 +90,22 @@ hevc() {
         #video_opts="-c:v libx265 -crf 28 -tag:v hvc1 -preset slow"
         if [ "$audio_codec" = "aac" ]; then
             #audio_opts="-c:a copy"
-            ffmpeg -i "${filename}" -c:v libx265 -crf 28 -tag:v hvc1 -preset slow -c:a copy "${filename%.*}.hvc1.mp4"
+            ffmpeg -i "${filename}" -c:v libx265 -crf 28 -tag:v hvc1 -preset slow -c:a copy -progress - -nostats "${filename%.*}.hvc1.mkv"
         else
             #audio_opts="-c:a aac -b:a 128k"
-            ffmpeg -i "${filename}" -c:v libx265 -crf 28 -tag:v hvc1 -preset slow -c:a aac -b:a 128k "${filename%.*}.hvc1.mp4"
+            ffmpeg -i "${filename}" -c:v libx265 -crf 28 -tag:v hvc1 -preset slow -c:a aac -b:a 128k -progress - -nostats "${filename%.*}.hvc1.mkv"
         fi
     fi
   done
+}
+
+function convert_to_720p {
+  input_file="$1"
+  preset="${2:-veryslow}"
+  base_name="${input_file%.*}"
+  output_file="${base_name}.720.mkv"
+
+  ffmpeg -i "$input_file" -vf "scale=720:-2" -c:v libx265 -preset "$preset" -crf 28 "$output_file"
 }
 
 # Shows the process using a specified port number
