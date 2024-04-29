@@ -44,3 +44,11 @@ source /opt/homebrew/opt/spaceship/spaceship.zsh
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# ngrok completions
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
+# paths
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
