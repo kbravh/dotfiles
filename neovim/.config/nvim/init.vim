@@ -11,7 +11,6 @@ unlet autoload_plug_path
 
 "** Plugins **
 call plug#begin('~/.vim/plugged')
-  Plug 'arcticicestudio/nord-vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'mattn/emmet-vim'
@@ -225,9 +224,6 @@ nmap <C-d> <Plug>BujoChecknormal
 imap <C-d> <Plug>BujoCheckinsert
 nnoremap <leader>T :Todo<CR>
 let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
-
-"** Theming **
-colorscheme nord
 
 " Airline
 let g:airline_powerline_fonts = 1
