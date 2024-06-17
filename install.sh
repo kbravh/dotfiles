@@ -33,7 +33,6 @@ _install miller
 _install snapd
 _install neovim
 _install zsh
-_install spaceship_prompt
 
 echo "AUR packages installed. Installing programs..."
 

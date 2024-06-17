@@ -6,9 +6,6 @@ source "$HOME/.aliases"
 # Load zsh plugins
 source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
 
-# Load zoxide
-eval "$(zoxide init zsh)"
-
 # Load dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
