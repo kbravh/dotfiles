@@ -11,6 +11,7 @@ source ~/.bashrc # Reload for nvm
 
 nvm install node
 nvm install-latest-npm
+nvm install 20
 
 # allow post scripts to run
 npm config set ignore-scripts false
