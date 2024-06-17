@@ -2,61 +2,57 @@
 
 set -eu -o pipefail # fail on error , debug all lines
 
-echo "Adding repositories"
-
-# Add repositories
-# - Cava repository
-sudo add-apt-repository ppa:hsheth2/ppa -y
-# - Git
-sudo add-apt-repository ppa:git-core/ppa -y
-
-# Update Ubuntu
-sudo apt update
-sudo apt full-upgrade -y
+# Update EndeavourOS
+yay -Syu --noconfirm
 
 # Install standard repository applications
 
-echo "Installing Debian packages"
+echo "Installing AUR packages"
 source ./util.sh
 
-deb_install tmux
-deb_install libevent-dev
-deb_install libncurses5-dev
-deb_install libncursesw5-dev
-deb_install git
-deb_install curl
-deb_install flameshot
-deb_install file
-deb_install figlet
-deb_install lolcat
-deb_install rar
-deb_install unrar
-deb_install cava
-deb_install cmus
-deb_install fzf
-deb_install fd-find
-deb_install xclip
-deb_install sad
-deb_install ffmpeg
-deb_install stow
-deb_install miller
-deb_install snapd
+_install tmux
+_install libevent
+_install ncurses
+_install git
+_install curl
+_install flameshot
+_install file
+_install figlet
+_install lolcat
+_install rar
+_install unrar
+_install cava
+_install cmus
+_install fzf
+_install fd
+_install xclip
+_install sad
+_install ffmpeg
+_install stow
+_install miller
+_install snapd
+_install neovim
+_install zsh
+_install spaceship_prompt
 
-echo "Debian packages installed. Installing programs..."
+echo "AUR packages installed. Installing programs..."
 
 # Run all scripts in programs/
 for f in programs/*.sh
-do 
+do
   echo "Running $f"
   bash "$f" -H
 done
 
 # Get all upgrades
-sudo apt upgrade -y
-sudo apt autoremove -y
+yay -Syu --noconfirm
+yay -Rns $(yay -Qdtq) --noconfirm
 
 # Reload so all applications are available
 source ~/.bashrc
+
+# Set zsh as the default shell
+sudo chsh -s $(which zsh)
 
 # Show confirmation message
 figlet "Systems are go." | lolcat

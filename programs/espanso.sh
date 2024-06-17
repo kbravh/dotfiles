@@ -1,5 +1,16 @@
 #!bin/bash
-wget https://github.com/federico-terzi/espanso/releases/download/v2.1.8/espanso-debian-x11-amd64.deb
-sudo apt install ./espanso-debian-x11-amd64.deb # install
-rm ./espanso-debian-x11-amd64.deb # cleanup
 
+# Create the $HOME/opt destination folder
+mkdir -p ~/opt
+# Download the AppImage inside it
+wget -O ~/opt/Espanso.AppImage 'https://github.com/federico-terzi/espanso/releases/download/v2.2.1/Espanso-X11.AppImage'
+# Make it executable
+chmod u+x ~/opt/Espanso.AppImage
+# Create the "espanso" command alias
+sudo ~/opt/Espanso.AppImage env-path register
+
+# Register espanso as a systemd service (required only once)
+sudo ~/opt/Espanso.AppImage service register
+
+# Start espanso
+sudo ~/opt/Espanso.AppImage start

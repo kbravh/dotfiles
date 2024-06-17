@@ -6,3 +6,7 @@ source $HOME/.cargo/env # Load for Rust
 
 # Install Rust packages
 cargo install bottom exa ripgrep zoxide bat git-delta
+
+# fix misnaming of bat
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat || echo "bat already exists"
