@@ -9,8 +9,6 @@ export NVM_DIR="$HOME/.nvm" && (
 
 source ~/.bashrc # Reload for nvm
 
-nvm install node
-nvm install-latest-npm
 nvm install 20
 
 # allow post scripts to run
