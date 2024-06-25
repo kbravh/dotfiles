@@ -4,12 +4,6 @@ set -eu -o pipefail # fail on error , debug all lines
 
 echo "Adding repositories"
 
-# Add repositories
-# - Cava repository
-sudo add-apt-repository ppa:hsheth2/ppa -y
-# - Git
-sudo add-apt-repository ppa:git-core/ppa -y
-
 # Update Ubuntu
 sudo apt update
 sudo apt full-upgrade -y
@@ -23,7 +17,6 @@ deb_install tmux
 deb_install libevent-dev
 deb_install libncurses5-dev
 deb_install libncursesw5-dev
-deb_install git
 deb_install curl
 deb_install flameshot
 deb_install file
@@ -41,15 +34,7 @@ deb_install ffmpeg
 deb_install stow
 deb_install miller
 deb_install snapd
-
-echo "Debian packages installed. Installing programs..."
-
-# Run all scripts in programs/
-for f in programs/*.sh
-do 
-  echo "Running $f"
-  bash "$f" -H
-done
+deb_install zsh
 
 # Get all upgrades
 sudo apt upgrade -y
@@ -57,6 +42,8 @@ sudo apt autoremove -y
 
 # Reload so all applications are available
 source ~/.bashrc
+
+chsh -s $(which zsh)
 
 # Show confirmation message
 figlet "Systems are go." | lolcat
