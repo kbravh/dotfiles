@@ -7,16 +7,13 @@ export NVM_DIR="$HOME/.nvm" && (
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 ) && \. "$NVM_DIR/nvm.sh"
 
+# sourcing this causes nvm to try to run, which fails because we don't install node till after
 source ~/.bashrc # Reload for nvm
 
-nvm install node
-nvm install-latest-npm
-
-# Install Yarn
-npm i -g yarn
+nvm install 20
 
 # allow post scripts to run
 npm config set ignore-scripts false
 
-# Install Node packages via Yarn
-yarn global add spaceship-prompt tweet-to-markdown rome gatsby-cli trash-cli carbon-now-cli neovim
+# Install npm packages
+npm i -g trash-cli empty-trash-cli
