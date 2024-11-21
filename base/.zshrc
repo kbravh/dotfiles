@@ -3,6 +3,8 @@ source "$HOME/.env"
 source "$HOME/.functions"
 source "$HOME/.aliases"
 
+source "$HOME/.cargo/env"
+
 # Load dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
@@ -52,3 +54,11 @@ fi
 
 # paths
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/kareybh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

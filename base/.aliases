@@ -2,8 +2,8 @@
 # Aliases
 alias myip="curl ipinfo.io/ip"
 alias weather="curl wttr.in"
-alias ll="exa -1 -a --icons --color=always"
-alias la="exa -la --icons"
+alias ll="eza -1 -a --icons --color=always"
+alias la="eza -la --icons"
 alias batpage="--paging=never -l log"
 alias clip="xclip -selection c"
 alias cp="cp -Rv"
@@ -26,6 +26,9 @@ alias wkr="git worktree remove"
 # Github
 alias ghcs="gh copilot suggest"
 alias ghce="gh copilot explain"
+
+# NPM
+alias npm="npm --progress=false"
 
 # Use batman if it exists
 if command -v batman $> /dev/null 

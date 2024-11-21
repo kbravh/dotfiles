@@ -31,7 +31,14 @@ matches:
         type: date
         params:
           format: "%m-%d-%Y"
-  
+  - trigger: ":rdate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
 # shrug emote
   - trigger: ":shrug"
     replace: "¯\_(ツ)_/¯"
