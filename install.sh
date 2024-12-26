@@ -13,7 +13,6 @@ sudo apt full-upgrade -y
 echo "Installing Debian packages"
 source ./util.sh
 
-deb_install alacritty
 deb_install tmux
 deb_install libevent-dev
 deb_install libncurses5-dev
