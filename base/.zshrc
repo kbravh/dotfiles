@@ -6,9 +6,6 @@ source "$HOME/.aliases"
 # Load zsh plugins
 source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
 
-# Load zoxide
-eval "$(zoxide init zsh)"
-
 # Load dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
@@ -99,7 +96,3 @@ fpath=($fpath "/home/kbravh/.zfunctions")
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-. "/home/kbravh/.deno/env"
