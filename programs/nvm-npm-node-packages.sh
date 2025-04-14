@@ -10,7 +10,7 @@ export NVM_DIR="$HOME/.nvm" && (
 # sourcing this causes nvm to try to run, which fails because we don't install node till after
 source ~/.bashrc # Reload for nvm
 
-nvm install 20
+nvm install 22
 
 # allow post scripts to run
 npm config set ignore-scripts false
