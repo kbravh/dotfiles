@@ -6,9 +6,6 @@ source "$HOME/.aliases"
 # Load zsh plugins
 source ~/dotfiles/zsh_plugins/zsh_plugins.zsh
 
-# Load zoxide
-eval "$(zoxide init zsh)"
-
 # Load dir_colors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
@@ -83,23 +80,6 @@ SPACESHIP_CHAR_SYMBOL="λ "
 fpath=($fpath "/home/kbravh/.zfunctions")
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/home/kbravh/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-# bun completions
-[ -s "/home/kbravh/.bun/_bun" ] && source "/home/kbravh/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/home/kbravh/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-fpath=($fpath "/home/kbravh/.zfunctions")
-
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-. "/home/kbravh/.deno/env"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
