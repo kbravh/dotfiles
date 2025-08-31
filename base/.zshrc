@@ -83,3 +83,11 @@ fpath=($fpath "/home/kbravh/.zfunctions")
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+. "/home/kbravh/.deno/env"
+
+# Turso
+export PATH="$PATH:/home/kbravh/.turso"
