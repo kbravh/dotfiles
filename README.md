@@ -2,16 +2,11 @@
 Aliases, functions, and other useful setup features for the workstation.
 
 ## Getting started
-Clone the repo with the following command in order to clone the submodules:
+Clone the repo.
 
-```bash
-git clone --recurse-submodules <repo>
-```
+If you don't yet have it, install the CLI tool `stow`.
 
-Next, install the list of programs by running the `install.sh` script.
-
-After installing necessary packages, you'll need to set up symlinks using the `stow` application.
-Assuming you run `stow` from `/home/kbravh/dotfiles`, `stow` will symlink to the parent directory
+Assuming you run `stow` from `/home/kbravh/dotfiles/stow`, `stow` will symlink to the parent directory
 `/home/kbravh`. This can be overridden using some of the `stow` options (check `man`!). Just run 
 `stow` and pass the directories you want to link: 
 
