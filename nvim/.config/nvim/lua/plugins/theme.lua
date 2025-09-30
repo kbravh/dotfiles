@@ -1,0 +1,1 @@
+/home/kbravh/.config/omarchy/current/theme/neovim.lua
