@@ -5,6 +5,7 @@ source ~/.local/share/omarchy/default/bash/rc
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
+alias myip="curl ipinfo.io/ip"
 alias weather="curl wttr.in"
 alias yt="yt-dlp -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3"
 alias cp="cp -Rv"
