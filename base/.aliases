@@ -1,14 +1,11 @@
 #!/bin/bash
 # Aliases
-alias zshconfig="nano ~/.zshrc"
-alias zshsource="source ~/.zshrc"
 alias myip="curl ipinfo.io/ip"
 alias weather="curl wttr.in"
-alias ll="exa -1 -a --icons --color=always"
-alias la="exa -la --icons"
+alias ll="eza -1 -a --icons=auto --color=always"
+alias la="lsa"
 #alias yt="youtube-dl -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3 --no-call-home"
 alias yt="yt-dlp -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3 --no-call-home"
-alias bat="bat"
 alias batpage="--paging=never -l log"
 alias vpn="expressvpn"
 alias vpnc="vpn connect"
@@ -17,9 +14,6 @@ alias vpns="vpn status"
 alias gco="git checkout"
 alias ttm="npx tweet-to-markdown -q -p $HOME/glass-notes -a --assets-path $HOME/glass-notes/assets"
 alias untar="tar -zxvf"
-alias clip="xclip -selection c"
-alias paste="xclip -selection c -o"
-alias fd="fdfind"
 alias cp="cp -Rv"
 alias mkdir="mkdir -pv"
 alias mv="mv -v"
@@ -43,7 +37,7 @@ alias unstable="tmux -f /home/kbravh/tmux/stable.tmux attach"
 alias auto="tmux -f /home/kbravh/tmux/automatic.tmux attach"
 
 # Use batman if it exists
-if command -v batman $> /dev/null 
+if command -v batman $> /dev/null
 then
   alias man=batman
-fi 
+fi

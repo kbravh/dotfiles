@@ -3,12 +3,14 @@
 source ~/.local/share/omarchy/default/bash/rc
 
 # Add your own exports, aliases, and functions here.
-#
-# Make an alias for invoking commands you use constantly
-alias myip="curl ipinfo.io/ip"
-alias weather="curl wttr.in"
-alias yt="yt-dlp -x --no-mtime -o '$HOME/Music/%(title)s.%(ext)s' --add-metadata --no-playlist -x --audio-format mp3"
-alias cp="cp -Rv"
-alias mv="mv -v"
-alias rsync="rsync --protect-args --compress --verbose --progress --human-readable"
+source ~/.env
+source "$HOME/.functions"
+source "$HOME/.aliases"
 
+# Load dir_colors
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
+# History overrides (override omarchy defaults)
+HISTFILESIZE=1000000000
+HISTSIZE=1000000000
+HISTTIMEFORMAT="[%F %T] "
