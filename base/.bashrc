@@ -14,3 +14,4 @@ test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
 HISTTIMEFORMAT="[%F %T] "
+
