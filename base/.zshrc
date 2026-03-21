@@ -47,3 +47,5 @@ export PATH="$PATH:/home/kbravh/.turso"
 
 
 alias claude-mem='/home/kbravh/.bun/bin/bun "/home/kbravh/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+
+. "$HOME/.local/share/../bin/env"

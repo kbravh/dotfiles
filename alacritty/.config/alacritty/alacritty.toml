@@ -22,3 +22,6 @@ bindings = [
 { key = "Return", mods = "Shift", chars = "\u001B\r" }
 ]
 
+
+[terminal]
+osc52 = "CopyPaste"
