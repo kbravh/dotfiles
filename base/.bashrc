@@ -3,7 +3,7 @@
 source ~/.local/share/omarchy/default/bash/rc
 
 # Add your own exports, aliases, and functions here.
-source ~/.env
+source ~/.shell_env
 source "$HOME/.functions"
 source "$HOME/.aliases"
 

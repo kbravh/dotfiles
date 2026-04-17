@@ -1,5 +1,5 @@
 # Load dotfiles
-source "$HOME/.env"
+source "$HOME/.shell_env"
 source "$HOME/.functions"
 source "$HOME/.aliases"
 
