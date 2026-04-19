@@ -1,12 +1,12 @@
 return {
   {
-    "omacom-io/lumon.nvim",
+    "bjarneo/ethereal.nvim",
     priority = 1000,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "lumon",
+      colorscheme = "ethereal",
     },
   },
 }
