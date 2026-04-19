@@ -1,60 +1,64 @@
-# Azure Glow Theme for Btop
-# Electric blues and radiant cyan with deep abyss backgrounds
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]=""
+theme_background=false
 
-theme[main_bg]="#0a0a14"
-theme[main_fg]="#b4dcff"
+# Main text color
+theme[main_fg]="#c7d2de"
 
-theme[title]="#00aaff"
-theme[hi_fg]="#d0f0ff"
-theme[selected_bg]="#00334d"
-theme[selected_fg]="#00ccff"
-theme[inactive_fg]="#00334d"
+# Title color for boxes
+theme[title]="#9fcfe9"
 
-theme[proc_misc]="#b4dcff"
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#b5deef"
 
-theme[cpu_box]="#00aaff"
-theme[mem_box]="#00e5ff"
-theme[net_box]="#00ccff"
-theme[proc_box]="#0099ff"
+# Background color of selected item in processes box
+theme[selected_bg]="#355066"
 
-theme[div_line]="#00334d"
+# Foreground color of selected item in processes box
+theme[selected_fg]="#c7d2de"
 
-theme[graph_text]="#66ccff"
+# Color of inactive/disabled text
+theme[inactive_fg]="#355066"
 
-# CPU gradients - from deep azure (low) to sky cyan to electric blue (high)
-theme[cpu_start]="#0055ff"
-theme[cpu_mid]="#00ccff"
-theme[cpu_end]="#00f0ff"
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#9fcfe9"
 
-# Memory gradients - from icy blue to bright cyan
-theme[mem_start]="#66d9ff"
-theme[mem_mid]="#00bfff"
-theme[mem_end]="#0099cc"
+# Box outline and divider line color
+theme[cpu_box]="#79abd2"
+theme[mem_box]="#79abd2"
+theme[net_box]="#79abd2"
+theme[proc_box]="#79abd2"
+theme[div_line]="#355066"
 
-# Network gradients - from bright cyan to aqua
-theme[download_start]="#00e5ff"
-theme[download_mid]="#00ccff"
-theme[download_end]="#0099ff"
+# Gradient for all meters and graphs
+theme[temp_start]="#b5deef"
+theme[temp_mid]="#92c7e7"
+theme[temp_end]="#79abd2"
 
-theme[upload_start]="#00ccff"
-theme[upload_mid]="#00b3ff"
-theme[upload_end]="#66ccff"
+theme[cpu_start]="#b5deef"
+theme[cpu_mid]="#92c7e7"
+theme[cpu_end]="#79abd2"
 
-# Process gradients - vibrant cyan to aqua blue
-theme[process_start]="#00e5ff"
-theme[process_mid]="#00ccff"
-theme[process_end]="#0099ff"
+theme[free_start]="#92c7e7"
+theme[free_mid]="#86b6da"
+theme[free_end]="#86b6da"
 
-# Temperature gradients - from cool blue to brighter cyan
-theme[temp_start]="#66d9ff"
-theme[temp_mid]="#00ccff"
-theme[temp_end]="#0099ff"
+theme[cached_start]="#86b6da"
+theme[cached_mid]="#86b6da"
+theme[cached_end]="#86b6da"
 
-# Battery gradient - cool cyan tones
-theme[battery_start]="#00e5ff"
-theme[battery_mid]="#00ccff"
-theme[battery_end]="#0099ff"
+theme[available_start]="#b5deef"
+theme[available_mid]="#b5deef"
+theme[available_end]="#b5deef"
 
-theme[clock]="#d0f0ff"
-theme[input_text]="#ffffff"
-theme[error_text]="#00ffff"
+theme[used_start]="#79abd2"
+theme[used_mid]="#79abd2"
+theme[used_end]="#79abd2"
+
+theme[download_start]="#86b6da"
+theme[download_mid]="#b5deef"
+theme[download_end]="#92c7e7"
+
+theme[upload_start]="#86b6da"
+theme[upload_mid]="#b5deef"
+theme[upload_end]="#92c7e7"

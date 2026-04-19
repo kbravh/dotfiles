@@ -1,37 +1,47 @@
 [colors.primary]
-background = "#0a0f1a"  # Deep ocean black-blue
-foreground = "#a8dfff"  # Icy azure glow
+background = "#16242d"
+foreground = "#d6e2ee"
 
 [colors.cursor]
-cursor = "#00ccff"      # Electric cyan beam
-text = "#0a0f1a"        # Dark contrast
+text = "#16242d"
+cursor = "#f2fcff"
+
+[colors.vi_mode_cursor]
+text = "#16242d"
+cursor = "#f2fcff"
+
+[colors.search.matches]
+foreground = "#16242d"
+background = "#6fa4c9"
+
+[colors.search.focused_match]
+foreground = "#16242d"
+background = "#4d86b0"
+
+[colors.footer_bar]
+foreground = "#16242d"
+background = "#d6e2ee"
+
+[colors.selection]
+text = "#1b2d40"
+background = "#4d9ed3"
 
 [colors.normal]
-black   = "#0d1b26"     # Abyssal navy
-red     = "#0099cc"     # Bright cerulean
-green   = "#00e0b8"     # Tropical aqua
-yellow  = "#33ccff"     # Sky flash
-blue    = "#00aaff"     # Bold azure
-magenta = "#3399ff"     # Deep sky fusion
-cyan    = "#66e0ff"     # Frosted cyan
-white   = "#cceeff"     # Snow drift
+black = "#1b2d40"
+red = "#4d86b0"
+green = "#5e95bc"
+yellow = "#6fa4c9"
+blue = "#6fb8e3"
+magenta = "#8bc9eb"
+cyan = "#b4e4f6"
+white = "#d6e2ee"
 
 [colors.bright]
-black   = "#123247"     # Steel blue shadow
-red     = "#33ccff"     # Neon sky
-green   = "#33ffdd"     # Glacial mint
-yellow  = "#66ddff"     # Arc light
-blue    = "#33bbff"     # Vibrant azure
-magenta = "#66b2ff"     # Cloud-washed blue
-cyan    = "#99eeff"     # Crystal haze
-white   = "#ffffff"     # Pure white glow
-
-[font]
-normal.family = "JetBrainsMono Nerd Font"
-size = 11.0
-
-[window]
-padding.x = 10
-padding.y = 10
-opacity = 0.95
-
+black = "#304860"
+red = "#73a6cb"
+green = "#86b7d8"
+yellow = "#9dcae5"
+blue = "#f2fcff"
+magenta = "#b1d8ee"
+cyan = "#d1eef8"
+white = "#ffffff"
