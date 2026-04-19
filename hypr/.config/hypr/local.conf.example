@@ -1,0 +1,21 @@
+# Machine-specific Hyprland overrides.
+#
+# Copy to local.conf (same directory) and edit for this machine.
+# local.conf is gitignored so each machine keeps its own.
+
+# --- Monitor scale ---
+# HiDPI laptop (2x):
+# env = GDK_SCALE,2
+# monitor=,preferred,auto,auto
+# xwayland {
+#   force_zero_scaling = true
+# }
+#
+# Standard 1080p/1440p desktop (1x):
+# env = GDK_SCALE,1
+# monitor=,preferred,auto,1
+
+# --- GPU env vars (NVIDIA only) ---
+# env = NVD_BACKEND,direct
+# env = LIBVA_DRIVER_NAME,nvidia
+# env = __GLX_VENDOR_LIBRARY_NAME,nvidia
