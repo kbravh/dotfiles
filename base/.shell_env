@@ -21,3 +21,14 @@ export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 
 # Add brew to path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
+# Git Pager
+export GIT_PAGER="delta"
+
+# Claude settings
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS="1"
+
+# Android dev setup
+export ANDROID_HOME=~/Android/Sdk
+export JAVA_HOME=/usr/lib/jvm/java-26-openjdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
